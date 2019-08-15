@@ -35,8 +35,26 @@ export default {
   methods: {
     onSubmit() {
       API.postVideo(this.form)
-        .then(res => {})
-        .catch(error => {});
+        .then(res => {
+          if (res.Stats > 0) {
+            this.$notify.error({
+              title: "投稿失败",
+              message: res.msg
+            });
+          } else {
+            this.$notify({
+              title: "投稿成功",
+              message: `您投稿的ID为${res.data.id}`,
+              type: "success"
+            });
+          }
+        })
+        .catch(error => {
+          this.$notify.error({
+            title: "网络错误或者服务器宕机",
+            message: error
+          });
+        });
     }
   },
   components: {}
