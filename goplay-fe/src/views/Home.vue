@@ -4,10 +4,12 @@
       <el-row :gutter="20">
         <el-col :span="4" v-for="video in videos" :key="video.id">
           <el-card class="video-card" @click.native="goVideo(video)">
-            <img
+            <!-- <img
               src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
               class="image"
-            />
+            />-->
+            <img class="video-avatar" :src="video.avatar" />
+
             <div>
               <div class="video-title">{{video.title}}</div>
               <div class="video-bottom clearfix">
@@ -53,6 +55,7 @@ export default {
 }
 .video-title {
   margin: 4px 0px 4px 0px;
+
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
