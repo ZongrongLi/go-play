@@ -19,6 +19,11 @@ export default new Router({
             component: Post,
         },
         {
+            path: '/video/:videoID',
+            name: 'showVideo',
+            component: () => import(/* webpackChunkName: "video" */ './views/ShowVideo.vue'),
+        },
+        {
             path: '/about',
             name: 'about',
             component: About,
