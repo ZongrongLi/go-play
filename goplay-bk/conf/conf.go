@@ -6,6 +6,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/tiancai110a/go-play/goplay-bk/cache"
 	"github.com/tiancai110a/go-play/goplay-bk/model"
+	"github.com/tiancai110a/go-play/goplay-bk/tasks"
 )
 
 // Init 初始化配置项
@@ -21,4 +22,6 @@ func Init() {
 	// 连接数据库
 	model.Database(os.Getenv("MYSQL_DSN"))
 	cache.Redis()
+	tasks.CronJob()
+
 }
