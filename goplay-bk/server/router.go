@@ -3,7 +3,6 @@ package server
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/tiancai110a/go-play/goplay-bk/api"
-	"github.com/tiancai110a/go-play/goplay-bk/middleware"
 )
 
 // NewRouter 路由配置
@@ -27,7 +26,7 @@ func NewRouter() *gin.Engine {
 		v1.POST("user/login", api.UserLogin)
 
 		// 需要登录保护的
-		v1.Use(middleware.AuthRequired())
+		//v1.Use(middleware.AuthRequired())
 		{
 			// User Routing
 			v1.GET("user/me", api.UserMe)
