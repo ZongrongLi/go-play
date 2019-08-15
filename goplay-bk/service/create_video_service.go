@@ -8,7 +8,7 @@ import (
 // CreateVideoService 视频投稿的服务
 type CreateVideoService struct {
 	Title string `form:"title" json:"title" binding:"required,min=2,max=100"`
-	Info  string `form:"info" json:"info" binding:"max=300"`
+	Info  string `form:"info" json:"info" binding:"max=500"`
 	URL   string `form:"url" json:"url"`
 }
 
